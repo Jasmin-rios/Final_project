@@ -5,8 +5,7 @@
 </script>
 
 <template>
-    
-    <form class="form_1">
+    <!-- <form class="form_1">
         <p>Type of events</p>
         <input type="checkbox" id="Concerts">
         <label for="Concerts">Concerts</label><br>
@@ -26,7 +25,7 @@
         <label for="Tomorrow">Tomorrow</label><br>
         <input type="checkbox" id="This week">
         <label for="This week">This week</label><br>
-    </form>
+    </form> -->
 
 </template>
 <style>

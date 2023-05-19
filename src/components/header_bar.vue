@@ -5,7 +5,7 @@ export default {
     methods:{ 
     infoAPI(){
         axios
-    .get('https://app.ticketmaster.com/discovery/v2/events/k7vGFKzleBdwS/images.json?apikey={apikey}')
+    .get('https://app.ticketmaster.com/discovery/v1/events.json?apikey=4dsfsf94tyghf85jdhshwge334.')
       .then(response => console.log(response.data))
     }}
 }
@@ -15,52 +15,49 @@ export default {
 <template>
 
     <header>
-        <img id="logo" src="../assets/logo-social.png" @click="infoAPI">
+        <img id="logo" src="../assets/Logo.png" @click="infoAPI">
         <div id="button-container">
-            <button class="header_bar1">Log In</button>
-            <button class="header_bar2">Sign Up</button>
+            <button class="header_bar">Log In</button>
+            <button class="header_bar">Sign Up</button>
         </div>      
-    </header><br>
-        
-    <h1>Find what you want to do now</h1><br>
-    
+    </header><br>    
 
 </template>
 
 <style>
+
+    .wrapper {
+        width: 95%;
+        max-width: 1000px;
+        margin: auto;
+        overflow: hidden;
+    }
    header {
     display: flex;
     flex-direction:row;
     align-items: flex-start;
-    padding: 0px;
+    padding: 20px 0 0 0;
     gap: auto;
     margin: 0;
     justify-content: space-between;
     align-items: center;
     width: 100%;
    }
-   header img{
-    height: 100px;
+   #logo{
     position: relative;
     font-weight: bold;
     font-size: 2em;
     letter-spacing: 2px;
     text-decoration: none;
+    width: 166.5px;
    }
-
-  /*  header button-container{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    display: inline-block;
-   } */
-
 
      button {
         font-size: 14px;
         border: solid 0.5px #000;
-        background-color: cornflowerblue;
-        padding: 10px 30px;
+        background-color: #DAEBFB;;
+        border-color: #DAEBFB;;
+        padding: 8px 16px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
@@ -68,7 +65,13 @@ export default {
         font-size: 12px;
         margin: 4px 2px;
         cursor: pointer;
-          
+        border-radius: 8px;
+        font-style: normal;
+        line-height: 17px;
+        color: #000000;
+        border: 1px solid #000000;
+
+
     } 
     h1 {
         font-size: 36px;

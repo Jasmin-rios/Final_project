@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from 'vue-router';
 import header_bar from  './components/header_bar.vue';
 import searching_bar from './components/searching_bar.vue';
 import events from './components/events.vue';
-import categories from './components/categories.vue';
+/* import categories from './components/categories.vue'; */
 /*import footer_bar from './components/footer_bar.vue'; */
 
 export default{
@@ -11,7 +11,7 @@ export default{
   components:{
     header_bar,
     searching_bar,
-    categories,
+    /* categories, */
     events,
     /*footer_bar, */
     }}
@@ -21,7 +21,7 @@ export default{
 <template>
   <header_bar />
   <searching_bar/>
-  <categories />
+  <!-- <categories /> -->
   <events />
   <!--<footer_bar /> -->
 </template>
