@@ -11,9 +11,7 @@ export default{
   components:{
     header_bar,
     searching_bar,
-    /* categories, */
     events,
-    /*footer_bar, */
     }}
 
 </script>

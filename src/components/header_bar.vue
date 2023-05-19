@@ -4,11 +4,15 @@ export default {
     name: "header_bar",
     methods:{ 
     infoAPI(){
+        console.log(import.meta.env.VITE_KEY)
         axios
-    .get('https://app.ticketmaster.com/discovery/v1/events.json?apikey=4dsfsf94tyghf85jdhshwge334.')
-      .then(response => console.log(response.data))
+        .get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${import.meta.env.VITE_KEY}&city=Madrid`)
+        .then(response => console.log(response.data))
     }}
 }
+
+
+
 
 </script>
 
