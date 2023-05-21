@@ -40,7 +40,7 @@ export default {
     display: flex;
     flex-direction:row;
     align-items: flex-start;
-    padding: 20px 0 0 0;
+    padding: 0px 0 0 0;
     gap: auto;
     margin: 0;
     justify-content: space-between;
