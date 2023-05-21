@@ -5,7 +5,6 @@ export default {
     data() {
         return{
             events: "",
-            favoriteEvents: [],
         }
         },
     methods: {
@@ -37,15 +36,15 @@ export default {
             <button id="onclick" @click="searchEvents">Let’s go!</button>
         
     </div>
-
-    <div v-for="event in events">
+    <div class  ="all-events" v-for="event in events">
         <div class="event-name">
         {{ event.name }}
         </div>
-        <div class="event-id">
+        <div id="event-id">
         {{ event.id }}
         </div>
     </div>
+
 </template>
 
 
@@ -78,8 +77,9 @@ export default {
         flex-direction: row;
         align-items: flex-start;
         padding: 0px;
-        gap: 10x;
+        gap: 6px;
         width: 100%;
+        position: relative;    
 
 }
 
@@ -88,26 +88,49 @@ input {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 4px 24px;
+    padding: 4px 20px;
+    margin: 0px 0px;
     gap: 8px;
-    
-}
-
+    border-radius: 6px;
+    background: #D9D9D9;
+    border: 1px solid #000000;
+    border-radius: 6px;
+    }
 
 #onclick{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-end;
-    padding: 10px 100px;
-    gap: 8px;
-    width: 723px;
+    padding: 8px 100px;
+    gap: 0px;
+    width: 625px;
     height: 37px;
-    background: #D79A9A;
-    border-radius: 8px;
     color: #FFFFFF;
-    border: #D79A9A;
+    background: #55C8B5;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px;
 }
 
+ event-name {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px;
+ }
 
+#event-id {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 15px;
+}
 </style>

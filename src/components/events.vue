@@ -5,7 +5,7 @@
 </script> 
 
 <template>
-    <h2>Eventos</h2>
+   <h2>Eventos</h2>
     <div id="all-events">
         <div>
             <img src="#"/>
@@ -15,6 +15,7 @@
         </div>
 
     </div>
+    
 
 </template>
 
