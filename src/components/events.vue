@@ -43,9 +43,12 @@
                 <h3 id= "events-name">
                     {{ event.name }}
                 </h3>
-                <p id="event-id">
-                    {{ event.id }}
+                <p id="event-id" >
+
                 </p>
+                <h5 id="date-id">
+                    {{ event.date }}
+                </h5>
             </div>
         </div>
     </section>
@@ -74,7 +77,7 @@
         align-items: center;
         width: 300px;
         height: 300px;
-
+        transition: bottom 0.3s;
     }
 
     .each-event .img-event {

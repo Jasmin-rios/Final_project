@@ -19,7 +19,7 @@ export default {
 <template>
 
     <header>
-        <img id="logo" src="../assets/Logo.png" @click="infoAPI">
+        <img id="logo" src="../assets/logo_mejorado.svg" >
         <div id="button-container">
             <button class="header_bar">Log In</button>
             <button class="header_bar">Sign Up</button>

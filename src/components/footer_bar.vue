@@ -30,18 +30,18 @@
                 </ul>
             </div>
         </div>
-        <!-- <div class="footer-social-media">
-            <div id="Follow-us">
-                <p>Follow us</p>
+        <div class="footer-social-media">
+            <div class="Follow-us">
+                <p class="Follow-us-p">Follow us</p>
                 <div id="icons-box">
-                    <img src="../assets/facebook.svg"/>
-                    <img src="../assets/instagram.svg"/>
-                    <img src="../assets/linkedin.svg">
-                    <img src="../assets/twitter.svg">
+                    <img class="icons" src="../assets/facebook.svg"/>
+                    <img class="icons" src="../assets/instagram.svg"/>
+                    <img class="icons" src="../assets/linkedin.svg">
+                    <img class="icons" src="../assets/twitter.svg">
                 </div>
             </div>
-            <img id= "logo-footer" src="../assets/Logo.png"/>
-        </div> -->
+            <img id= "logo-footer" src="../assets/LOGO EN BLANCO.svg"/>
+        </div>
     </section>
 </template>
 
@@ -49,14 +49,14 @@
     .footer {
         display: flex;
         background-color: black;
+        flex-direction: column;
     }
-
+/* <<caja de arriba>> */
     .all-options {
         display: flex;
         gap: 50px;
         flex-wrap: wrap;
         justify-content: space-around;
-        margin: 10px auto;
         align-items: flex-start;
         flex-direction: row;
         width: 90%;
@@ -84,4 +84,49 @@
         line-height: 24px;
     }
 
+    /* <<caja de abajo>> */
+    .footer-social-media {
+        display: flex;
+        gap: 360px;
+        justify-content: space-around;
+        margin: 0px auto;
+        align-items:center;
+        flex-direction: row;
+        width: 90%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 20px 20px;
+    }
+
+    .Follow-us {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 8px;
+    }
+    .Follow-us-p {
+        color: white;
+    }
+
+    #icon-box {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 100px;
+
+        width: 232px;
+        height: 40px;
+    }
+    .icons {
+        width: 20px;
+        height: 20px;
+    }
+
+    #logo-footer {
+        width: 150px;
+        height: 50px;
+
+    }
+    
 </style>
