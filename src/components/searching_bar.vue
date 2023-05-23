@@ -61,6 +61,7 @@ export default {
         align-items: flex-start;
         padding: 16px;  
         gap: 10px;
+        justify-content: center;
         
     }
 
@@ -68,6 +69,7 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        justify-content: center;
         padding: 0px;
         opacity: 1;
     }
@@ -81,6 +83,8 @@ export default {
 
     h1 {
     width: 100%;
+    outline-color: 5px green;
+
     
 }
     label {
@@ -136,6 +140,7 @@ export default {
         font-size: 14px;
         line-height: 15px;
         box-sizing: border-box;
+        outline: none;
     }
 
     

@@ -59,7 +59,7 @@
         justify-content: space-around;
         align-items: flex-start;
         flex-direction: row;
-        width: 90%;
+        width: 100%;
         height: 100%;
         margin: 0 auto;
         box-sizing: border-box;
@@ -92,7 +92,7 @@
         margin: 0px auto;
         align-items:center;
         flex-direction: row;
-        width: 90%;
+        width: 100%;
         height: 100%;
         box-sizing: border-box;
         padding: 20px 20px;

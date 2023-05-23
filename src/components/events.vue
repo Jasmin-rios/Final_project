@@ -7,22 +7,22 @@
             events: "",
         }
         },
-    mounted () {
+        mounted () {
         this.showEvents() 
-    },
-    methods: {
-        showEvents(){
-            axios
-            .get(`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&apikey=${import.meta.env.VITE_KEY}`)
-            .then(response => 
-                
-            {console.log (response)
-                this.events= response.data._embedded.events}
-                )
-            .catch(error=> {
-                console.log(error);
-        });
         },
+        methods: {
+            showEvents(){
+                axios
+                .get(`https://app.ticketmaster.com/discovery/v2/events.json?classificationName=music&dmaId=324&apikey=${import.meta.env.VITE_KEY}`)
+                .then(response => 
+                    
+                {console.log (response)
+                    this.events= response.data._embedded.events}
+                    )
+                .catch(error=> {
+                    console.log(error);
+            });
+            },
         
         }
     }
@@ -35,20 +35,21 @@
     <h2>Events</h2>
     </div>
     <section class="all_event_cards">
-        <div class="each-event" v-for="event in events">
+        <div class="each-event" v-for="event in events" v-bind:key="event.id">
             <figure>
                 <img class="img-event" v-bind:src="event.images[1].url" alt="">
             </figure>
+
             <div class = "event-info">
                 <h3 id= "events-name">
                     {{ event.name }}
                 </h3>
-                <p id="event-id" >
-
+                <p>
+                    Fecha: {{event.dates.start.localDate}}
                 </p>
-                <h5 id="date-id">
-                    {{ event.date }}
-                </h5>
+                <a v-bind:href="event.url">
+                    More info
+                </a>
             </div>
         </div>
     </section>
@@ -57,17 +58,17 @@
 <style scoped>
     section {
         display: flex;
-        gap: 50px;
+        gap: 30px;
         flex-wrap: wrap;
         justify-content: space-around;
-        margin: 10px auto;
+        margin: 0px auto;
         align-items: flex-start;
         flex-direction: row;
         width: 90%;
         height: 100%;
         margin: 0 auto;
         box-sizing: border-box;
-        padding: 20px;
+        padding: 16px;
     }
 
 
@@ -75,20 +76,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 300px;
-        height: 300px;
+        width: 280px;
         transition: bottom 0.3s;
     }
 
     .each-event .img-event {
         width: 230px;
-        height: 165px;
+        height: 150px;
         align-items: center;
     }
 
     .event-info  {
         margin: 0 auto;
-        width: 80%;
+        width: 90%;
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -98,15 +98,10 @@
     h3 {
         font-weight: 700;
         font-size: 18px;
-        line-height: 16px;
+        line-height: 18px;
         text-align: center;
-    }
-
-    #event-id {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 15px;
+        padding: 8px;
+        margin: 0 auto;
     }
     
     h2 {
@@ -119,5 +114,13 @@
         height: 24px;
 
     }
+    p {
+        margin: 10px auto;
+        font-weight: 300;
+        font-size: 16px;
+    }
 
+    a {
+        font-size: 14px;
+    }
 </style>
