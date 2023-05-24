@@ -40,7 +40,7 @@
                     <img class="icons" src="../assets/twitter.svg">
                 </div>
             </div>
-            <img id= "logo-footer" src="../assets/LOGO EN BLANCO.svg"/>
+            <img id= "logo-footer" src="../assets/logo_blanco.svg"/>
         </div>
         <div id="copy">
             <p>&copy; 2023 LiviT. All rights reserved.</p>

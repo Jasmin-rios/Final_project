@@ -77,7 +77,11 @@
         flex-direction: column;
         align-items: center;
         width: 280px;
-        transition: bottom 0.3s;
+        padding: 6px;
+    }
+
+    .each-event:hover {
+        background-color: #D9D9D7;
     }
 
     .each-event .img-event {
@@ -88,7 +92,7 @@
 
     .event-info  {
         margin: 0 auto;
-        width: 90%;
+        width: 95%;
         align-items: center;
         display: flex;
         flex-direction: column;

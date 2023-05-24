@@ -35,14 +35,15 @@ export default {
 
 <template>
     <div id="container-search">
-        <p id= "subtitle" for="site-search">What do you feel like doing?</p>
+        <p id= "subtitle" for="site-search">What do you feel like doing today?</p>
         <div id="search">
                 <div id="input-box">
                     <input type="text" v-model="keyword" class="form-control" placeholder="Key Words">
                     <input type="text" v-model="date" class="search-in-site" placeholder="Date">
-                    <input type="text" v-model="location" class="search-in-site" placeholder="Location"><br>
+                    <input type="text" v-model="location" class="search-in-site" placeholder="Location">
                 </div>
-                    <button id="onclick" @click= "buscarEvents">Let’s go!</button>
+
+                <button id="onclick" @click= "buscarEvents">Let’s go!</button>
             </div>
 
             <section>
@@ -74,8 +75,9 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 36px;  
+        padding: 20px;  
         justify-content: center;
+        padding-left: 85px;
     }
 
     #search {
@@ -83,8 +85,6 @@ export default {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
-        padding: 0px;
-        opacity: 1;
         max-width: 100vw;
     }
 
@@ -95,14 +95,13 @@ export default {
 }
 
     #input-box {
-        text-align: center;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         padding: 0px;
         width: 100%;
         position: relative;
-        /* gap: 8px;     */
+        gap: 8px;
         box-sizing: border-box;
         flex-wrap: wrap;
 }
@@ -151,13 +150,24 @@ export default {
         color: #000000;
     }
 
+    .each-event {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 280px;
+        padding: 6px;
+    }
+
+    .each-event:hover {
+        background-color: #D9D9D7;
+    }
+
     .event-info {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 280px;
         border-color: #000000;
-        padding: 16px;
     }
 
     .img-event {

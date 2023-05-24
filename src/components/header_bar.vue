@@ -91,7 +91,7 @@ export default {
     #hero {
         background:no-repeat url(../assets/background-image_2.jpg);
         background-size: cover;
-        background-position: 0px -200px;
+        background-position: 0px -100px;
         opacity: 0.9;
         padding: 90px 40px;
         width: 90%;
