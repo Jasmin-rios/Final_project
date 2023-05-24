@@ -21,12 +21,11 @@ export default {
             <button class="header_bar">Sign Up</button>
         </div>      
     </header><br>   
-    
-    <div id="hero">
-        <h1>Find what you want to do now</h1><br>
-        <p id= "subtitle" for="site-search">What do you feel like doing?</p><br>
-    </div> 
-
+    <section class="container-hero">
+        <div id="hero">
+            <h1>Find what you want to do now</h1><br>
+        </div>
+    </section>
 </template>
 
 <style>
@@ -79,21 +78,27 @@ export default {
 
     } 
     h1 {
+        color: black;
+        text-shadow:
+        -1px -1px 0 #eee,
+        1px -1px 0 #eee,
+        -1px 1px 0 #eee,
+        1px 1px 0 #eee;
+        /* background: black;       */
         font-size: 36px;
-        font-weight: 300;
-        background-color: #CEF8F1;
-        max-width: max-content;
-        outline-color: white;
-    
 }
+    
     #hero {
         background:no-repeat url(../assets/background-image_2.jpg);
         background-size: cover;
-        background-position: center;
-        width: 100%;
-        opacity: 1;
-        padding: 20px;
-        fill-opacity: 0.5;
+        background-position: 0px -200px;
+        opacity: 0.9;
+        padding: 90px 40px;
+        width: 90%;
+        align-items: center;
+        margin: 0 auto;
     }
-
+    .container-hero {
+        align-items: center;
+    }
 </style>

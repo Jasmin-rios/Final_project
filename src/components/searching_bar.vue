@@ -35,29 +35,29 @@ export default {
 
 <template>
     <div id="container-search">
+        <p id= "subtitle" for="site-search">What do you feel like doing?</p>
         <div id="search">
                 <div id="input-box">
                     <input type="text" v-model="keyword" class="form-control" placeholder="Key Words">
-                    <input type="search" v-model="date" class="search-in-site" placeholder="Date">
-                    <input type="search" v-model="location" class="search-in-site" placeholder="Location"><br>
+                    <input type="text" v-model="date" class="search-in-site" placeholder="Date">
+                    <input type="text" v-model="location" class="search-in-site" placeholder="Location"><br>
                 </div>
                     <button id="onclick" @click= "buscarEvents">Let’s go!</button>
             </div>
 
             <section>
                 <div class="each-event" v-for="event in events">
-                    <figure>
-                        <img class="img-event" v-bind:src="events" alt="">
-                    </figure>
-
-                    <div class = "event-info">
+                        <figure>
+                            <img class="img-event" v-bind:src="event.images[1].url" alt="">
+                        </figure>
+                    <div class="event-info">
                         <h3 id= "events-name" >
                             {{ event.name }}
                         </h3>
                         <p>
                             Fecha: {{event.dates.start.localDate}}
                         </p>
-                        <a v-bind:href="event.url">
+                        <a target="_blank" v-bind:href="event.url" >
                             More info
                         </a>
                     </div>
@@ -74,10 +74,8 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 16px;  
-        gap: 10px;
+        padding: 36px;  
         justify-content: center;
-        
     }
 
     #search {
@@ -91,9 +89,9 @@ export default {
     }
 
     label {
-    display: flexbox;
-    font:  20px 'Fira Sans', sans-serif;
-    width: 100%;
+        display: flexbox;
+        font:  20px 'Fira Sans', sans-serif;
+        width: 100%;
 }
 
     #input-box {
@@ -102,11 +100,11 @@ export default {
         flex-direction: row;
         align-items: flex-start;
         padding: 0px;
-        gap: 6px;
         width: 100%;
         position: relative;
-        gap: 8px;    
+        /* gap: 8px;     */
         box-sizing: border-box;
+        flex-wrap: wrap;
 }
 
     input {
@@ -115,7 +113,7 @@ export default {
         justify-content: center;
         align-items: center;
         padding: 4px 20px;
-        margin: 0px 0px;
+        margin: 6px 0px;
         gap: 8px;
         border-radius: 6px;
         background: #FFFFFF;
@@ -129,9 +127,8 @@ export default {
         flex-direction: row;
         justify-content: center;
         align-items: flex-end;
-        padding: 8px 100px;
         gap: 0px;
-        width: 625px;
+        width: 100%;
         height: 37px;
         color: #FFFFFF;
         background: #55C8B5;
@@ -151,8 +148,29 @@ export default {
         font-weight: 600;
         font-size: 20px;
         line-height: 24px;
-
         color: #000000;
     }
+
+    .event-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 280px;
+        border-color: #000000;
+        padding: 16px;
+    }
+
+    .img-event {
+        width: 230px;
+        height: 150px;
+        align-items: center;
+    }
+
+    h3{
+        text-align: center;
+        padding: 8px;
+        margin: 0 auto;
+    }
+
 
 </style>

@@ -47,7 +47,7 @@
                 <p>
                     Fecha: {{event.dates.start.localDate}}
                 </p>
-                <a v-bind:href="event.url">
+                <a target= "_blank" v-bind:href="event.url">
                     More info
                 </a>
             </div>
@@ -58,7 +58,7 @@
 <style scoped>
     section {
         display: flex;
-        gap: 30px;
+        gap: 15px;
         flex-wrap: wrap;
         justify-content: space-around;
         margin: 0px auto;
@@ -68,7 +68,7 @@
         height: 100%;
         margin: 0 auto;
         box-sizing: border-box;
-        padding: 16px;
+        padding-bottom: 20px;
     }
 
 
