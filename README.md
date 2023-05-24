@@ -1,10 +1,10 @@
-<img src="./assets/logo_mejorado"/>
+![logo](../assets/logo_mejorado.svg)
 
 ## About the Project
 LiviT is a website created to show events in different places around the world.
 
 ### Used Technologies
-<img src="./assets/technologies"/>
+![tech](./assets/technologies)
 
 ### Developed Features
 
