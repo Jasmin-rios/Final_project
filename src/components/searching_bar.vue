@@ -2,59 +2,74 @@
 import { stringifyExpression } from '@vue/compiler-core';
 import { computed } from '@vue/reactivity';
 import axios from 'axios';
-import datos from "./events.vue"
+import datos from "./events.vue";
 export default {
-    name: "searching_bar",
-    name: "Eventos-extraídos",
-    methods: {
-        searchEvents () {
-            axios
-            .get()
-        },
+    name: "events",
     props: {
         msg: String
     },
     data(){
         return {
-            buscar: ''
+            keyword: '',
+            date: '',
+            location: '',
+            events: ''
+
         }
     },
-    },
-    computed: {
-        items () {
-            return datos.filter(item => {
-                return item.nombre.toLowerCase().includes(this.buscar.toLowerCase());
-            });
-        },
-    }
+    methods: {
+        buscarEvents() {
+            axios
+            .get(`https://app.ticketmaster.com/discovery/v2/events.json?size=1&apikey=${import.meta.env.VITE_KEY}&keyword=${this.keyword}"`)
+            .then(response => 
+                
+                {console.log(response.data)
+                this.events= response.data._embedded.events}
+            )
+        }
+ 
   }
+}
 
 </script>
 
 <template>
-    <div id="aquí-img">
-        <div id="hero">
-            <div id="container-hero">
-                <h1>Find what you want to do now</h1><br>
-                <p id= "subtitle" for="site-search">What do you feel like doing?</p><br>
+    <div id="container-search">
+        <div id="search">
                 <div id="input-box">
-                        <input type="search" v-model= "buscar" class="search-in-site" placeholder="Key Words">
-                        <input type="search" class="search-in-site" placeholder="Date">
-                        <input type="search" class="search-in-site" placeholder="Location"><br>
+                    <input type="text" v-model="keyword" class="form-control" placeholder="Key Words">
+                    <input type="search" v-model="date" class="search-in-site" placeholder="Date">
+                    <input type="search" v-model="location" class="search-in-site" placeholder="Location"><br>
                 </div>
-                    <button id="onclick" >Let’s go!</button>
+                    <button id="onclick" @click= "buscarEvents">Let’s go!</button>
             </div>
-        </div>
+
+            <section>
+                <div class="each-event" v-for="event in events">
+                    <figure>
+                        <img class="img-event" v-bind:src="events" alt="">
+                    </figure>
+
+                    <div class = "event-info">
+                        <h3 id= "events-name" >
+                            {{ event.name }}
+                        </h3>
+                        <p>
+                            Fecha: {{event.dates.start.localDate}}
+                        </p>
+                        <a v-bind:href="event.url">
+                            More info
+                        </a>
+                    </div>
+                </div>
+            </section>
     </div>
 
 </template>
 
 
 <style scoped>
-    #hero{
-        /* background:no-repeat url(../assets/background-image_2.jpg);
-        background-size: cover;
-        background-position: center; */
+    #container-search{
         position: relative;
         display: flex;
         flex-direction: column;
@@ -65,28 +80,16 @@ export default {
         
     }
 
-    #container-hero {
+    #search {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
         padding: 0px;
         opacity: 1;
-    }
-    #aquí-img {
-        background:no-repeat url(../assets/background-image_2.jpg);
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        opacity: 0.9;
+        max-width: 100vw;
     }
 
-    h1 {
-    width: 100%;
-    outline-color: 5px green;
-
-    
-}
     label {
     display: flexbox;
     font:  20px 'Fira Sans', sans-serif;
@@ -102,7 +105,6 @@ export default {
         gap: 6px;
         width: 100%;
         position: relative;
-        padding: 10px 600px 10px 0px;
         gap: 8px;    
         box-sizing: border-box;
 }

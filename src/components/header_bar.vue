@@ -4,27 +4,28 @@ export default {
     name: "header_bar",
     methods:{ 
     infoAPI(){
-        console.log(import.meta.env.VITE_KEY)
+        // console.log(import.meta.env.VITE_KEY)
         axios
         .get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${import.meta.env.VITE_KEY}&city=Madrid`)
         .then(response => console.log(response.data))
     }}
 }
 
-
-
-
 </script>
 
 <template>
-
     <header>
         <img id="logo" src="../assets/logo_mejorado.svg" >
         <div id="button-container">
             <button class="header_bar">Log In</button>
             <button class="header_bar">Sign Up</button>
         </div>      
-    </header><br>    
+    </header><br>   
+    
+    <div id="hero">
+        <h1>Find what you want to do now</h1><br>
+        <p id= "subtitle" for="site-search">What do you feel like doing?</p><br>
+    </div> 
 
 </template>
 
@@ -46,6 +47,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
    }
    #logo{
     position: relative;
@@ -56,7 +58,7 @@ export default {
     width: 166.5px;
    }
 
-     button {
+    button {
         font-size: 14px;
         border: solid 0.5px #000;
         background-color: #DAEBFB;;
@@ -75,11 +77,23 @@ export default {
         color: #000000;
         border: 1px solid #000000;
 
-
     } 
     h1 {
         font-size: 36px;
+        font-weight: 300;
+        background-color: #CEF8F1;
+        max-width: max-content;
+        outline-color: white;
+    
+}
+    #hero {
+        background:no-repeat url(../assets/background-image_2.jpg);
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        opacity: 1;
+        padding: 20px;
+        fill-opacity: 0.5;
     }
-
 
 </style>

@@ -41,7 +41,7 @@
             </figure>
 
             <div class = "event-info">
-                <h3 id= "events-name">
+                <h3 id= "events-name" >
                     {{ event.name }}
                 </h3>
                 <p>

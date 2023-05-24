@@ -42,6 +42,9 @@
             </div>
             <img id= "logo-footer" src="../assets/LOGO EN BLANCO.svg"/>
         </div>
+        <div id="copy">
+            <p>&copy; 2023 LiviT. All rights reserved.</p>
+        </div>
     </section>
 </template>
 
@@ -121,6 +124,7 @@
     .icons {
         width: 20px;
         height: 20px;
+        padding: 6px;
     }
 
     #logo-footer {
@@ -128,5 +132,11 @@
         height: 50px;
 
     }
-    
+    #copy {
+        color: white;
+        padding: auto;
+        margin: 0 auto;
+        align-items: left;
+        font-size: 12px;
+    }
 </style>
