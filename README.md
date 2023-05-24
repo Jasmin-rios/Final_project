@@ -1,29 +1,18 @@
-# my-final-page
+<img src="./assets/logo_mejorado"/>
 
-This template should help get you started developing with Vue 3 in Vite.
+## About the Project
+LiviT is a website created to show events in different places around the world.
 
-## Recommended IDE Setup
+### Used Technologies
+<img src="./assets/technologies"/>
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### Developed Features
 
-## Customize configuration
+* Header & Footer
+* Search bar
+* Event cards
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Next Steps
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+* Event detail page
+* Suggested events
